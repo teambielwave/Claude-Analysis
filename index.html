@@ -198,6 +198,13 @@
   .mw-detail.show{display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
   .mw-img{width:120px;height:120px;object-fit:cover;border-radius:8px;border:1px solid var(--card-border);flex:none;background:var(--surface);}
   .mw-item-sub{font-size:.75rem;color:var(--ink-2);}
+  .hist-range-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0;padding:14px;background:var(--surface);border-radius:12px;}
+  .hist-range-kpis .hrk-period{grid-column:1/-1;font-size:.75rem;color:var(--ink-2);font-weight:600;margin-bottom:2px;}
+  .hrk-label{font-size:.6875rem;color:var(--ink-3);font-weight:600;margin-bottom:4px;}
+  .hrk-value{font-family:var(--font-mono);font-weight:800;font-size:1.15rem;}
+  .hrk-value.roas-good{color:var(--good);}
+  .hrk-value.roas-warn{color:var(--warn);}
+  .hrk-value.roas-crit{color:var(--crit);}
 </style>
 
 <div class="wrap">
@@ -586,6 +593,7 @@
     <div class="chart-scroll">
       <svg viewBox="0 0 900 260" width="100%" height="260" role="img" id="hist-svg" aria-label="일별 추이 꺾은선 그래프"></svg>
     </div>
+    <div class="hist-range-kpis" id="hist-range-kpis"></div>
     <div class="hist-summary" id="hist-summary"></div>
   </div>
 
@@ -875,6 +883,24 @@
     renderHistChart();
   }
 
+  function renderHistRangeKpis(rangeData, rangeStart, rangeEnd) {
+    var el = document.getElementById('hist-range-kpis');
+    if (rangeData.length === 0) {
+      el.innerHTML = '<div class="hrk-period">선택 기간(' + rangeStart + ' ~ ' + rangeEnd + ')에 집행 데이터가 없습니다.</div>';
+      return;
+    }
+    var totalSpend = 0, totalPurchases = 0, totalRevenue = 0;
+    rangeData.forEach(function(r){ totalSpend += r[1]; totalPurchases += r[2]; totalRevenue += r[3]; });
+    var roas = totalSpend > 0 ? totalRevenue / totalSpend : 0;
+    var roasClass = roas >= 2 ? 'roas-good' : (roas >= 1 ? 'roas-warn' : 'roas-crit');
+    el.innerHTML =
+      '<div class="hrk-period">선택 기간 ' + rangeStart + ' ~ ' + rangeEnd + ' (' + rangeData.length + '일)</div>' +
+      '<div><div class="hrk-label">지출</div><div class="hrk-value">' + Math.round(totalSpend).toLocaleString() + '원</div></div>' +
+      '<div><div class="hrk-label">메타매출</div><div class="hrk-value">' + Math.round(totalRevenue).toLocaleString() + '원</div></div>' +
+      '<div><div class="hrk-label">메타구매</div><div class="hrk-value">' + totalPurchases + '건</div></div>' +
+      '<div><div class="hrk-label">메타ROAS</div><div class="hrk-value ' + roasClass + '">' + roas.toFixed(2) + '</div></div>';
+  }
+
   function renderHistChart() {
     ['spend','purchases','revenue','roas'].forEach(function(m){
       document.getElementById('mtab-' + m).classList.toggle('active', selectedHistMetrics.indexOf(m) !== -1);
@@ -889,6 +915,7 @@
     var base = new Date(histRangeStart + 'T00:00:00Z').getTime();
     var totalDays = Math.max(histDayOffset(histRangeEnd, base), 1);
     var rangeData = HIST_DATA.filter(function(r){ return r[0] >= histRangeStart && r[0] <= histRangeEnd; });
+    renderHistRangeKpis(rangeData, histRangeStart, histRangeEnd);
 
     function xPos(dateStr) { return ML + (histDayOffset(dateStr, base) / totalDays) * plotW; }
 
