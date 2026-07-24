@@ -233,45 +233,45 @@
       <div class="kpi-label">누적 지출 (4일, 메타)</div>
       <div class="kpi-value">₩336,187</div>
       <div class="kpi-sub">일예산 100,000원 · A+B 세트</div>
-      <div class="kpi-delta neutral"><span class="arrow">▽</span>일 평균 ₩84,047 · 목표 필요 일예산(₩192,300) 대비 -56%</div>
+      <div class="kpi-delta neutral"><span class="arrow">▽</span>일 평균 ₩84,047 · 목표 필요 일예산(₩200,114) 대비 -58%</div>
     </div>
     <div class="kpi">
-      <div class="kpi-label">실매출 · 실주문 (07-22까지)</div>
-      <div class="kpi-value" style="color:var(--teal)">₩299,500</div>
-      <div class="kpi-sub">실주문 <b style="color:var(--bronze);font-family:var(--font-mono);">9건</b> 누적 · 07-23분 확인 대기중</div>
-      <div class="kpi-delta warn"><span class="arrow">▼</span>기대 페이스(21건) 대비 -12건</div>
+      <div class="kpi-label">실매출 · 실주문</div>
+      <div class="kpi-value" style="color:var(--teal)">₩395,200</div>
+      <div class="kpi-sub">실주문 <b style="color:var(--bronze);font-family:var(--font-mono);">12건</b> 누적</div>
+      <div class="kpi-delta warn"><span class="arrow">▼</span>기대 페이스(29건) 대비 -17건</div>
     </div>
     <div class="kpi">
-      <div class="kpi-label">실ROAS (07-22까지)</div>
-      <div class="kpi-value">1.24</div>
+      <div class="kpi-label">실ROAS</div>
+      <div class="kpi-value">1.18</div>
       <span class="chip warn">학습중 · 개선 추세</span>
-      <div class="kpi-delta warn"><span class="arrow">▼</span>손익분기(2.0) 대비 -38%</div>
+      <div class="kpi-delta warn"><span class="arrow">▼</span>손익분기(2.0) 대비 -41%</div>
     </div>
     <div class="kpi">
       <div class="kpi-label">CPA (실매출 기준)</div>
-      <div class="kpi-value">₩26,916</div>
+      <div class="kpi-value">₩28,016</div>
       <div class="kpi-sub">주문 1건당 평균 비용</div>
-      <div class="kpi-delta warn"><span class="arrow">▲</span>손익분기 CPA(~16,639) 대비 +62%</div>
+      <div class="kpi-delta warn"><span class="arrow">▲</span>손익분기 CPA(~16,467) 대비 +70%</div>
     </div>
     <div class="kpi">
       <div class="kpi-label">CTR</div>
-      <div class="kpi-value">2.37%</div>
+      <div class="kpi-value">2.18%</div>
       <span class="chip good">건강함 · 소재 이상無</span>
-      <div class="kpi-delta good"><span class="arrow">▲</span>업계 평균(~1%) 대비 +137%</div>
+      <div class="kpi-delta good"><span class="arrow">▲</span>업계 평균(~1%) 대비 +118%</div>
     </div>
   </div>
 
   <div class="section">
     <p class="section-title">일별 지출 · 매출 흐름</p>
-    <p class="section-desc">막대 = 지출(광고비) vs 실매출 · 점선 눈금 = 손익분기 매출선(지출×2) · 상단 숫자는 실ROAS · 07-20~07-22 3일 완료 데이터(실매출 기준, 07-23분은 확인 대기)</p>
+    <p class="section-desc">막대 = 지출(광고비) vs 실매출 · 점선 눈금 = 손익분기 매출선(지출×2) · 상단 숫자는 실ROAS · 07-20~07-23 4일 완료 데이터(실매출 기준)</p>
     <div class="legend">
       <div class="legend-item"><span class="legend-swatch spend"></span>지출(광고비)</div>
       <div class="legend-item"><span class="legend-swatch revenue"></span>실매출</div>
       <div class="legend-item"><span class="legend-swatch target"></span>손익분기 매출선</div>
     </div>
     <div class="chart-scroll">
-      <svg viewBox="0 0 640 250" width="100%" height="250" role="img" aria-label="일별 지출과 실매출 비교 막대 차트, 손익분기 매출선과 실ROAS 표기">
-        <line class="axis-line" x1="30" y1="210" x2="610" y2="210"></line>
+      <svg viewBox="0 0 833 250" width="100%" height="250" role="img" aria-label="일별 지출과 실매출 비교 막대 차트, 손익분기 매출선과 실ROAS 표기">
+        <line class="axis-line" x1="30" y1="210" x2="803" y2="210"></line>
 
         <!-- Day 1 : 07-20 -->
         <line class="ref-line" x1="98" y1="162.14" x2="156" y2="162.14"></line>
@@ -297,11 +297,20 @@
         <text class="order-tag" x="513" y="224" text-anchor="middle">실주문 4건</text>
         <text class="day-label" x="513" y="240" text-anchor="middle">07-22</text>
 
+        <!-- Day 4 : 07-23 (완료) -->
+        <line class="ref-line" x1="677" y1="54.72" x2="735" y2="54.72"></line>
+        <rect class="bar" x="677" y="132.37" width="26" height="77.63" rx="4" data-tip="07-23 · 지출 93,940원"></rect>
+        <rect class="bar revenue" x="709" y="130.91" width="26" height="79.09" rx="4" data-tip="07-23 · 실매출 95,700원 (손익분기 매출 187,880원)"></rect>
+        <text class="roas-tag" x="706" y="121" text-anchor="middle">1.02</text>
+        <text class="order-tag" x="706" y="224" text-anchor="middle">실주문 3건</text>
+        <text class="day-label" x="706" y="240" text-anchor="middle">07-23</text>
+
         <!-- day-over-day deltas -->
         <text class="flow-delta up" x="223" y="60" text-anchor="middle">매출 ▲290%</text>
         <text class="flow-delta up" x="416" y="60" text-anchor="middle">매출 ▲19%</text>
+        <text class="flow-delta down" x="609" y="60" text-anchor="middle">매출 ▼34%</text>
       </svg>
-      <p class="section-desc" style="margin:8px 0 0;">07-23은 메타 지표(아래 소재별 분석)는 반영됨 · 실매출은 확인되는 대로 이 그래프에 반영 예정.</p>
+      <p class="section-desc" style="margin:8px 0 0;">07-24(오늘)은 진행중이라 다음 업데이트 때 반영됩니다.</p>
     </div>
   </div>
 
@@ -309,13 +318,13 @@
     <div class="section">
       <p class="section-title">1주차 목표 진행률 (07-20 ~ 07-26)</p>
       <p class="section-desc">목표: 주 50건 구매 · 검은 막대는 오늘까지 도달해야 할 기대 페이스</p>
-      <div class="gauge-num"><span class="big">9</span><span class="of">/ 50건 (18%)</span></div>
+      <div class="gauge-num"><span class="big">12</span><span class="of">/ 50건 (24%)</span></div>
       <div class="gauge-track">
-        <div class="gauge-fill" style="width:18%"></div>
-        <div class="gauge-pace" style="left:42.8%" data-label="기대 페이스 21건"></div>
+        <div class="gauge-fill" style="width:24%"></div>
+        <div class="gauge-pace" style="left:57.1%" data-label="기대 페이스 29건"></div>
       </div>
       <div class="gauge-legend"><span>0건</span><span>50건</span></div>
-      <div class="gauge-note">현재 예산(10만원/일)으로는 주 <b>약 26건</b> 예상 — 목표의 절반 수준.<br>50건 도달에 필요한 일예산은 <b>약 192,000원</b>(현재의 약 2배).</div>
+      <div class="gauge-note">현재 예산(10만원/일)으로는 주 <b>약 25건</b> 예상 — 목표의 절반 수준.<br>50건 도달에 필요한 일예산은 <b>약 200,100원</b>(현재의 약 2배).</div>
     </div>
 
     <div class="section">
@@ -340,10 +349,10 @@
 
           <text class="flow-delta down" x="260" y="92" text-anchor="middle" style="fill:var(--warn)">▼2% vs 이전</text>
 
-          <text class="day-label" x="4" y="112">7월 재시작(3일 완료)</text>
+          <text class="day-label" x="4" y="112">7월 재시작(4일 완료)</text>
           <rect class="bar-track" x="150" y="100" width="220" height="20" rx="4"></rect>
-          <rect class="bar" x="150" y="100" width="137" height="20" rx="4" data-tip="7/20~22(완료) · 실ROAS 1.24"></rect>
-          <text class="val-label" x="296" y="115">1.24</text>
+          <rect class="bar" x="150" y="100" width="130" height="20" rx="4" data-tip="7/20~23(완료) · 실ROAS 1.18"></rect>
+          <text class="val-label" x="289" y="115">1.18</text>
         </svg>
       </div>
     </div>
@@ -351,7 +360,7 @@
 
   <div class="section">
     <p class="section-title">소재별 분석</p>
-    <p class="section-desc">세트A / 세트B를 클릭하면 상세 분석이 펼쳐집니다 · 07-20~07-23 완료 4일 기준 · 아래 구매/매출은 <b>메타 추적 기준</b>이며, 실주문 9건·실매출 299,500원(07-22까지)은 세트별로 나뉘지 않아(사용자 수기 확인) 여기엔 반영되지 않습니다.</p>
+    <p class="section-desc">세트A / 세트B를 클릭하면 상세 분석이 펼쳐집니다 · 07-20~07-23 완료 4일 기준 · 아래 구매/매출은 <b>메타 추적 기준</b>이며, 실주문 12건·실매출 395,200원은 세트별로 나뉘지 않아(사용자 수기 확인) 여기엔 반영되지 않습니다.</p>
     <div class="material-grid">
       <div class="material-card" id="card-A" role="button" tabindex="0" onclick="showDetail('A')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showDetail('A');}">
         <div class="material-card-top">
@@ -498,7 +507,7 @@
     <div class="rec-grid">
       <div class="rec-card">
         <div class="rec-top"><span class="rec-title">예산</span><span class="chip hold">유지</span></div>
-        <div class="rec-body">실ROAS 1.08→1.11→1.42(07-22)로 개선 중, 07-23 실매출은 확인 대기. 7/26~27까지 증액 보류, B세트 우선 배분 검토.</div>
+        <div class="rec-body">실ROAS 1.08→1.11→1.42→1.02(07-23)로 4일 누적 1.18. 07-23 실매출 확인 완료, 메타 추적과 정확히 일치(3건/95,700원). 7/26~27까지 증액 보류, B세트 우선 배분 검토.</div>
       </div>
       <div class="rec-card">
         <div class="rec-top"><span class="rec-title">소재</span><span class="chip warn">관찰 필요</span></div>
@@ -514,14 +523,13 @@
       </div>
       <div class="rec-card">
         <div class="rec-top"><span class="rec-title">전환 추적</span><span class="chip warn">주의</span></div>
-        <div class="rec-body">07-20·21은 메타-실매출 100% 일치했으나 07-22 다시 1건(48,300원) 누락 발생. 개선 추세이나 완전 해결은 아님, 계속 확인 필요.</div>
+        <div class="rec-body">07-20·21·23은 메타-실매출 100% 일치, 07-22만 1건(48,300원) 누락 — 4일 중 3일 일치로 추적 신뢰도 양호.</div>
       </div>
     </div>
   </div>
 
   <div class="section">
     <p class="section-title">데일리 지표 원본</p>
-    <p class="section-desc">07-23(메타 지출93,940원·메타구매3건·메타매출95,700원)은 실주문/실매출 확인 후 이 표에 추가됩니다.</p>
     <div class="chart-scroll">
       <table>
         <thead>
@@ -531,7 +539,8 @@
           <tr><td>2026-07-20</td><td class="num">28,965</td><td class="num">2.88%</td><td class="num">1</td><td class="num">31,400</td><td class="num">1</td><td class="num rev-cell">31,400</td><td class="num roas-cell warn">1.08</td><td class="num">28,965</td></tr>
           <tr><td>2026-07-21</td><td class="num">110,647</td><td class="num">2.42%</td><td class="num">4</td><td class="num">122,600</td><td class="num">4</td><td class="num rev-cell">122,600</td><td class="num roas-cell warn">1.11</td><td class="num">27,662</td></tr>
           <tr><td>2026-07-22</td><td class="num">102,635</td><td class="num">2.16%</td><td class="num">3</td><td class="num">97,200</td><td class="num">4</td><td class="num rev-cell">145,500</td><td class="num roas-cell warn">1.42</td><td class="num">25,659</td></tr>
-          <tr style="font-weight:700;"><td>합계 (3일)</td><td class="num">242,247</td><td class="num">2.37%</td><td class="num">8</td><td class="num">251,200</td><td class="num">9</td><td class="num rev-cell">299,500</td><td class="num roas-cell warn">1.24</td><td class="num">26,916</td></tr>
+          <tr><td>2026-07-23</td><td class="num">93,940</td><td class="num">1.78%</td><td class="num">3</td><td class="num">95,700</td><td class="num">3</td><td class="num rev-cell">95,700</td><td class="num roas-cell warn">1.02</td><td class="num">31,313</td></tr>
+          <tr style="font-weight:700;"><td>합계 (4일)</td><td class="num">336,187</td><td class="num">2.18%</td><td class="num">11</td><td class="num">346,900</td><td class="num">12</td><td class="num rev-cell">395,200</td><td class="num roas-cell warn">1.18</td><td class="num">28,016</td></tr>
         </tbody>
       </table>
     </div>
