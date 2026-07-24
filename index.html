@@ -547,44 +547,6 @@
     </div>
   </div>
 
-  <div class="section">
-    <p class="section-title">요일별 · 시간대별 실매출 패턴</p>
-    <p class="section-desc">쇼핑몰 실매출(순매출) 원본 기준 · 요일은 광고 집행 시작일(04-22)~오늘(07-24) 94일 전체 캘린더(매출 0원인 날 포함) · 시간대는 결제완료 금액 기준(누적)</p>
-    <div class="chart-scroll">
-      <table>
-        <thead><tr><th>순위</th><th>요일</th><th class="num">일평균 순매출</th></tr></thead>
-        <tbody>
-          <tr><td>1</td><td>목요일</td><td class="num rev-cell">169,082원</td></tr>
-          <tr><td>2</td><td>일요일</td><td class="num">155,105원</td></tr>
-          <tr><td>3</td><td>월요일</td><td class="num">146,210원</td></tr>
-          <tr><td>4</td><td>금요일</td><td class="num">143,227원</td></tr>
-          <tr><td>5</td><td>수요일</td><td class="num">143,000원</td></tr>
-          <tr><td>6</td><td>토요일</td><td class="num">139,914원</td></tr>
-          <tr><td>7</td><td>화요일</td><td class="num roas-cell warn">109,010원</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="chart-scroll" style="margin-top:12px;">
-      <table>
-        <thead><tr><th>순위</th><th>시간대</th><th class="num">결제금액</th><th class="num">결제상품수</th></tr></thead>
-        <tbody>
-          <tr><td>1</td><td>22:00~23:00</td><td class="num rev-cell">1,295,500원</td><td class="num">63건</td></tr>
-          <tr><td>2</td><td>23:00~24:00</td><td class="num">1,224,100원</td><td class="num">75건</td></tr>
-          <tr><td>3</td><td>21:00~22:00</td><td class="num">892,150원</td><td class="num">48건</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="insight-box">
-      <b>인사이트</b>
-      <ul>
-        <li>가장 강한 요일은 <b>목요일</b>, 그다음 <b>일요일</b>. 흔히 예상과 달리 <b>토요일은 하위권(6위)</b> — "주말=토요일이 피크"라는 인식은 정확하지 않음.</li>
-        <li><b>화요일</b>은 요일 중 가장 약함(메타 리포트 기준 분석에서도 동일하게 최저 — 두 데이터 소스에서 일관되게 확인됨).</li>
-        <li>시간대는 <b>밤 21~24시가 압도적</b> — 이 3시간(하루의 12.5%)이 전체 결제금액의 약 23.5%를 차지.</li>
-        <li><b>실행 팁</b>: 메타 광고는 세트 일예산을 소진하면 그날 남은 시간엔 노출이 멈춤 — 예산 증액은 밤 피크 전, <b>오전~이른 오후 중에 미리 반영</b>해야 안전. 특히 목요일·일요일 밤에 예산이 바닥나지 않도록 우선 점검할 것.</li>
-      </ul>
-    </div>
-  </div>
-
   </div><!-- /tab-live -->
 
   <div id="tab-plan" style="display:none">
@@ -640,7 +602,7 @@
         <li>신규 캠페인 2개(1+1, 첫구매 혜택)는 새로운 학습 단계(구매 50건 기준)를 거치게 됨 — 리스크 인지 후 진행 결정.</li>
         <li>매일 성과 확인하며 다음 단계 진행 여부 판단.</li>
         <li>1+1 상품 가격 확인 후 별도 손익분기 ROAS 기준 산정 예정 (아직 미확인).</li>
-        <li>요일별·시간대별 실매출 패턴(목·일요일 강세, 화요일 최약, 밤 21~24시 강세)은 "현재 라이브" 탭 하단 참고.</li>
+        <li>요일별·시간대별 실매출 패턴(목·일요일 강세, 화요일 최약, 밤 21~24시 강세)은 "전체 히스토리" 탭 참고.</li>
       </ul>
     </div>
   </div>
@@ -673,6 +635,44 @@
         <div class="kpi-value" style="font-size:1.25rem;">423,685 · 9,482</div>
         <div class="kpi-sub">전체기간 합계</div>
       </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">요일별 · 시간대별 실매출 패턴</p>
+    <p class="section-desc">쇼핑몰 실매출(순매출) 원본 기준 · 요일은 광고 집행 시작일(04-22)~오늘(07-24) 94일 전체 캘린더(매출 0원인 날 포함) · 시간대는 결제완료 금액 기준(누적)</p>
+    <div class="chart-scroll">
+      <table>
+        <thead><tr><th>순위</th><th>요일</th><th class="num">일평균 순매출</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>목요일</td><td class="num rev-cell">169,082원</td></tr>
+          <tr><td>2</td><td>일요일</td><td class="num">155,105원</td></tr>
+          <tr><td>3</td><td>월요일</td><td class="num">146,210원</td></tr>
+          <tr><td>4</td><td>금요일</td><td class="num">143,227원</td></tr>
+          <tr><td>5</td><td>수요일</td><td class="num">143,000원</td></tr>
+          <tr><td>6</td><td>토요일</td><td class="num">139,914원</td></tr>
+          <tr><td>7</td><td>화요일</td><td class="num roas-cell warn">109,010원</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="chart-scroll" style="margin-top:12px;">
+      <table>
+        <thead><tr><th>순위</th><th>시간대</th><th class="num">결제금액</th><th class="num">결제상품수</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>22:00~23:00</td><td class="num rev-cell">1,295,500원</td><td class="num">63건</td></tr>
+          <tr><td>2</td><td>23:00~24:00</td><td class="num">1,224,100원</td><td class="num">75건</td></tr>
+          <tr><td>3</td><td>21:00~22:00</td><td class="num">892,150원</td><td class="num">48건</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="insight-box">
+      <b>인사이트</b>
+      <ul>
+        <li>가장 강한 요일은 <b>목요일</b>, 그다음 <b>일요일</b>. 흔히 예상과 달리 <b>토요일은 하위권(6위)</b> — "주말=토요일이 피크"라는 인식은 정확하지 않음.</li>
+        <li><b>화요일</b>은 요일 중 가장 약함(메타 리포트 기준 분석에서도 동일하게 최저 — 두 데이터 소스에서 일관되게 확인됨).</li>
+        <li>시간대는 <b>밤 21~24시가 압도적</b> — 이 3시간(하루의 12.5%)이 전체 결제금액의 약 23.5%를 차지.</li>
+        <li><b>실행 팁</b>: 메타 광고는 세트 일예산을 소진하면 그날 남은 시간엔 노출이 멈춤 — 예산 증액은 밤 피크 전, <b>오전~이른 오후 중에 미리 반영</b>해야 안전. 특히 목요일·일요일 밤에 예산이 바닥나지 않도록 우선 점검할 것.</li>
+      </ul>
     </div>
   </div>
 
