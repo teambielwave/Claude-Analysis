@@ -310,55 +310,14 @@
   </div>
 
   <div class="section">
-    <p class="section-title">일별 지출 · 매출 흐름 (초기 4일 스냅샷)</p>
-    <p class="section-desc">막대 = 지출(광고비) vs 실매출 · 점선 눈금 = 손익분기 매출선(지출×2) · 상단 숫자는 실ROAS · 07-20~07-23 4일 완료 데이터(실매출 기준) · <b>07-24부터는 캠페인 구조가 바뀌어(세트 통합 + 1+1 신규) 이 차트엔 반영 안 됨 — 아래 "데일리 지표 원본" 표에서 07-27까지 최신 흐름 확인</b></p>
+    <p class="section-title">일별 지출 · 매출 흐름 (07-20~, 계속 갱신)</p>
+    <p class="section-desc">막대 = 지출(광고비) vs 매출(실매출 확인분은 실매출, 아직 미확인일은 메타매출로 임시 표시) · 상단 숫자는 ROAS · 캠페인·세트 구성이 바뀌어도 계속 이어서 표시됩니다(동일 상품 기준)</p>
     <div class="legend">
       <div class="legend-item"><span class="legend-swatch spend"></span>지출(광고비)</div>
-      <div class="legend-item"><span class="legend-swatch revenue"></span>실매출</div>
-      <div class="legend-item"><span class="legend-swatch target"></span>손익분기 매출선</div>
+      <div class="legend-item"><span class="legend-swatch revenue"></span>매출</div>
     </div>
     <div class="chart-scroll">
-      <svg viewBox="0 0 833 250" width="100%" height="250" role="img" aria-label="일별 지출과 실매출 비교 막대 차트, 손익분기 매출선과 실ROAS 표기">
-        <line class="axis-line" x1="30" y1="210" x2="803" y2="210"></line>
-
-        <!-- Day 1 : 07-20 -->
-        <line class="ref-line" x1="98" y1="162.14" x2="156" y2="162.14"></line>
-        <rect class="bar" x="98" y="186.06" width="26" height="23.94" rx="4" data-tip="07-20 · 지출 28,965원"></rect>
-        <rect class="bar revenue" x="130" y="184.05" width="26" height="25.95" rx="4" data-tip="07-20 · 실매출 31,400원 (손익분기 매출 57,930원)"></rect>
-        <text class="roas-tag" x="127" y="172" text-anchor="middle">1.08</text>
-        <text class="order-tag" x="127" y="224" text-anchor="middle">실주문 1건</text>
-        <text class="day-label" x="127" y="240" text-anchor="middle">07-20</text>
-
-        <!-- Day 2 : 07-21 -->
-        <line class="ref-line" x1="291" y1="27.2" x2="349" y2="27.2"></line>
-        <rect class="bar" x="291" y="118.58" width="26" height="91.42" rx="4" data-tip="07-21 · 지출 110,647원"></rect>
-        <rect class="bar revenue" x="323" y="108.68" width="26" height="101.32" rx="4" data-tip="07-21 · 실매출 122,600원 (손익분기 매출 221,294원)"></rect>
-        <text class="roas-tag" x="320" y="98" text-anchor="middle">1.11</text>
-        <text class="order-tag" x="320" y="224" text-anchor="middle">실주문 4건</text>
-        <text class="day-label" x="320" y="240" text-anchor="middle">07-21</text>
-
-        <!-- Day 3 : 07-22 (완료) -->
-        <line class="ref-line" x1="484" y1="40.37" x2="542" y2="40.37"></line>
-        <rect class="bar" x="484" y="125.17" width="26" height="84.83" rx="4" data-tip="07-22 · 지출 102,635원"></rect>
-        <rect class="bar revenue" x="516" y="89.76" width="26" height="120.24" rx="4" data-tip="07-22 · 실매출 145,500원 (손익분기 매출 205,270원)"></rect>
-        <text class="roas-tag" x="513" y="80" text-anchor="middle">1.42</text>
-        <text class="order-tag" x="513" y="224" text-anchor="middle">실주문 4건</text>
-        <text class="day-label" x="513" y="240" text-anchor="middle">07-22</text>
-
-        <!-- Day 4 : 07-23 (완료) -->
-        <line class="ref-line" x1="677" y1="54.72" x2="735" y2="54.72"></line>
-        <rect class="bar" x="677" y="132.37" width="26" height="77.63" rx="4" data-tip="07-23 · 지출 93,940원"></rect>
-        <rect class="bar revenue" x="709" y="130.91" width="26" height="79.09" rx="4" data-tip="07-23 · 실매출 95,700원 (손익분기 매출 187,880원)"></rect>
-        <text class="roas-tag" x="706" y="121" text-anchor="middle">1.02</text>
-        <text class="order-tag" x="706" y="224" text-anchor="middle">실주문 3건</text>
-        <text class="day-label" x="706" y="240" text-anchor="middle">07-23</text>
-
-        <!-- day-over-day deltas -->
-        <text class="flow-delta up" x="223" y="60" text-anchor="middle">매출 ▲290%</text>
-        <text class="flow-delta up" x="416" y="60" text-anchor="middle">매출 ▲19%</text>
-        <text class="flow-delta down" x="609" y="60" text-anchor="middle">매출 ▼34%</text>
-      </svg>
-      <p class="section-desc" style="margin:8px 0 0;">이 4일간은 세트A(260720_셀캠업_구매A)와 세트B(260720_셀캠업_구매B)가 각각 별도 운영되던 시기입니다.</p>
+      <svg id="live-daily-svg" width="100%" height="260" role="img" aria-label="일별 지출과 매출 비교 막대 차트, ROAS 표기"></svg>
     </div>
   </div>
 
@@ -1383,5 +1342,77 @@
     }
   }
 
+  var LIVE_CHART_START = '2026-07-20';
+
+  function renderLiveDailyChart() {
+    var data = HIST_DATA.filter(function(r){ return r[0] >= LIVE_CHART_START; });
+    var svg = document.getElementById('live-daily-svg');
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    if (data.length === 0) return;
+
+    var barW = 22, barGap = 4, daySlot = 74, ML = 44, MR = 20, MT = 34, MB = 46;
+    var W = ML + data.length * daySlot + MR;
+    var H = 260;
+    var plotH = H - MT - MB;
+
+    var maxVal = 0;
+    data.forEach(function(r){
+      if (r[1] > maxVal) maxVal = r[1];
+      if (r[4] > maxVal) maxVal = r[4];
+    });
+    if (maxVal <= 0) maxVal = 1;
+    var scale = plotH / (maxVal * 1.15);
+
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+
+    var ns = 'http://www.w3.org/2000/svg';
+    function el(tag, attrs) {
+      var e = document.createElementNS(ns, tag);
+      for (var k in attrs) e.setAttribute(k, attrs[k]);
+      return e;
+    }
+    function withTip(node, tipText) {
+      node.addEventListener('mousemove', function(e){
+        tip.textContent = tipText;
+        tip.style.left = (e.clientX + 14) + 'px';
+        tip.style.top = (e.clientY + 14) + 'px';
+        tip.classList.add('show');
+      });
+      node.addEventListener('mouseleave', function(){ tip.classList.remove('show'); });
+      return node;
+    }
+
+    svg.appendChild(el('line', { x1: ML - 10, y1: H - MB, x2: W - MR + 10, y2: H - MB, class: 'axis-line' }));
+
+    data.forEach(function(r, i){
+      var date = r[0], spend = r[1], purchases = r[2], realsales = r[4];
+      var x0 = ML + i * daySlot;
+      var spendH = Math.max(spend * scale, 0), revH = Math.max(realsales * scale, 0);
+      var spendY = H - MB - spendH, revY = H - MB - revH;
+      var mmdd = date.slice(5);
+
+      svg.appendChild(withTip(el('rect', { x: x0, y: spendY, width: barW, height: spendH, rx: 3, class: 'bar' }),
+        mmdd + ' · 지출 ' + Math.round(spend).toLocaleString() + '원'));
+      svg.appendChild(withTip(el('rect', { x: x0 + barW + barGap, y: revY, width: barW, height: revH, rx: 3, class: 'bar revenue' }),
+        mmdd + ' · 매출 ' + Math.round(realsales).toLocaleString() + '원'));
+
+      var roas = spend > 0 ? (realsales / spend) : 0;
+      var roasColor = roas >= 2 ? 'var(--good)' : (roas >= 1 ? 'var(--warn)' : 'var(--crit)');
+      var roasTag = el('text', { x: x0 + barW + barGap / 2, y: Math.min(spendY, revY) - 8, 'text-anchor': 'middle', class: 'roas-tag' });
+      roasTag.style.fill = roasColor;
+      roasTag.textContent = roas.toFixed(2);
+      svg.appendChild(roasTag);
+
+      var orderTag = el('text', { x: x0 + barW + barGap / 2, y: H - MB + 16, 'text-anchor': 'middle', class: 'order-tag' });
+      orderTag.textContent = purchases + '건';
+      svg.appendChild(orderTag);
+
+      var dayLabel = el('text', { x: x0 + barW + barGap / 2, y: H - MB + 32, 'text-anchor': 'middle', class: 'day-label' });
+      dayLabel.textContent = mmdd;
+      svg.appendChild(dayLabel);
+    });
+  }
+
   renderHistChart();
+  renderLiveDailyChart();
 </script>
