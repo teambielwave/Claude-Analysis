@@ -1,22 +1,22 @@
 <title>송풍구방향제 광고 성과 대시보드</title>
 <style>
   :root{
-    --surface: #F2F5F4;
+    --surface: #F3F6FC;
     --card: #FFFFFF;
-    --card-border: #DFE6E4;
-    --ink: #16211F;
-    --ink-2: #4E5A57;
-    --ink-3: #8A9591;
-    --teal: #0089A0;
-    --teal-tint: #E2F1F3;
-    --bronze: #B8823A;
-    --bronze-tint: #F5ECDC;
-    --good: #2F8F5F;
-    --good-tint: #E4F3EA;
-    --warn: #C97A1F;
-    --warn-tint: #FBEEDE;
-    --crit: #C1524A;
-    --crit-tint: #FBE8E6;
+    --card-border: #DDE6F3;
+    --ink: #0F1B33;
+    --ink-2: #445573;
+    --ink-3: #94A3C4;
+    --teal: #2563EB;
+    --teal-tint: #EAF1FE;
+    --bronze: #5B7BA6;
+    --bronze-tint: #EEF2F9;
+    --good: #16A34A;
+    --good-tint: #EAFBF1;
+    --warn: #EA580C;
+    --warn-tint: #FFF1E8;
+    --crit: #DC2626;
+    --crit-tint: #FDEDED;
     --font-main: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', -apple-system, sans-serif;
     --font-mono: ui-monospace, 'SF Mono', 'D2Coding', Consolas, monospace;
   }
@@ -108,6 +108,18 @@
   .gauge-note{margin-top:14px;padding-top:14px;border-top:1px solid var(--card-border);font-size:.8125rem;color:var(--ink-2);}
   .gauge-note b{color:var(--ink);}
 
+  /* action items (지금 할 일) */
+  .action-section{background:var(--card);border:2px solid var(--teal);border-radius:16px;padding:20px 22px;margin-bottom:20px;}
+  .action-title{font-size:1.05rem;font-weight:800;margin:0;color:var(--ink);}
+  .action-desc-top{font-size:.8125rem;color:var(--ink-2);margin:2px 0 0;}
+  .action-list{display:flex;flex-direction:column;gap:10px;margin-top:16px;}
+  .action-item{display:flex;gap:12px;align-items:flex-start;padding:13px 14px;background:var(--surface);border-radius:10px;}
+  .action-num{flex:none;width:26px;height:26px;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;font-size:.8125rem;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+  .action-body{flex:1;min-width:0;}
+  .action-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px;}
+  .action-name{font-weight:800;font-size:.9375rem;color:var(--ink);}
+  .action-desc{font-size:.8125rem;color:var(--ink-2);line-height:1.65;margin:0;}
+
   /* recommendation cards */
   .rec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;}
   .rec-card{border:1px solid var(--card-border);border-radius:12px;padding:14px 14px 15px;}
@@ -118,8 +130,8 @@
   /* material cards */
   .material-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
   .material-card{border:1px solid var(--card-border);border-radius:12px;background:var(--surface);padding:16px 16px 14px;cursor:pointer;transition:border-color .15s ease, box-shadow .15s ease;}
-  .material-card:hover{border-color:var(--teal);box-shadow:0 4px 14px rgba(0,137,160,.12);}
-  .material-card.active{border-color:var(--teal);border-width:2px;padding:15px 15px 13px;box-shadow:0 4px 14px rgba(0,137,160,.16);}
+  .material-card:hover{border-color:var(--teal);box-shadow:0 4px 14px rgba(37,99,235,.12);}
+  .material-card.active{border-color:var(--teal);border-width:2px;padding:15px 15px 13px;box-shadow:0 4px 14px rgba(37,99,235,.16);}
   .material-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px;}
   .material-name{font-weight:800;font-size:.875rem;}
   .material-mini-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
@@ -226,6 +238,41 @@
     <div class="header-meta">
       기준일 2026-07-27 (07-26 마감 메타 데이터 기준)<br>
       다음 예산조정 <b style="color:var(--ink)">08-01 (50만원 목표)</b>
+    </div>
+  </div>
+
+  <div class="action-section">
+    <p class="action-title">🎯 지금 할 일 (2026-07-27 기준)</p>
+    <p class="action-desc-top">우선순위 순서대로 정리했어요</p>
+    <div class="action-list">
+      <div class="action-item">
+        <div class="action-num">1</div>
+        <div class="action-body">
+          <div class="action-head"><span class="action-name">1+1 소재B에 증액분 몰아주기</span><span class="chip warn">지켜보는 중</span></div>
+          <p class="action-desc">1+1세트 안에서 소재B가 ROAS는 더 좋은데(0.91) 예산은 16%밖에 못 받고 있어요. 지금 소재A를 끄지는 말고, 앞으로 예산을 늘릴 땐 소재B 쪽에 먼저 배분하세요. 소재B 구매가 3~4건 쌓이면 세트 분리 여부를 다시 판단할게요.</p>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="action-num">2</div>
+        <div class="action-body">
+          <div class="action-head"><span class="action-name">A소재(복사) 계속 저조하면 교체</span><span class="chip crit">확인 필요</span></div>
+          <p class="action-desc">세트B로 통합했는데도 3일 내내 ROAS 0.44로 최저예요. 세트 문제가 아니라 소재 자체 문제로 보여요. 다음 체크포인트까지 개선 안 되면 이 소재는 중단하고 새 소재로 교체하는 걸 검토하세요.</p>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="action-num">3</div>
+        <div class="action-body">
+          <div class="action-head"><span class="action-name">8/1 목표(50만원/일)까지 증액 속도 올리기</span><span class="chip warn">진행 필요</span></div>
+          <p class="action-desc">07-25 25.2만원 → 07-26 22.5만원으로 오히려 줄어서 계획보다 느려요. 남은 날짜 안에 목표에 도달하려면 곧 증액이 필요해요.</p>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="action-num">4</div>
+        <div class="action-body">
+          <div class="action-head"><span class="action-name">"첫구매 혜택" 캠페인 진행 여부 확인</span><span class="chip hold">확인 필요</span></div>
+          <p class="action-desc">07-25에 런칭 예정이었는데 데이터에 아직 안 보여요. 계획대로 진행할지, 이번엔 스킵할지 결정해주세요.</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1038,7 +1085,7 @@
 
   var HIST_DATA = [["2026-04-22",15316,0,0,0,922,896,10],["2026-04-23",110028,1,26900,67300,3979,3557,78],["2026-04-24",174172,3,87700,87700,8544,7971,147],["2026-04-25",172970,2,71700,71700,10565,9535,180],["2026-04-26",115318,2,76200,101700,7634,6748,222],["2026-04-27",59609,1,46300,46300,5149,4485,183],["2026-04-28",190685,4,153100,153100,10750,9945,202],["2026-04-29",210242,6,146400,170300,11840,10614,203],["2026-04-30",211798,6,158400,158400,11826,10842,190],["2026-05-01",290589,8,245680,241780,14166,12719,199],["2026-05-02",199982,0,0,0,11042,10011,180],["2026-05-03",161626,2,50800,74700,8460,7687,146],["2026-05-04",174994,3,88200,88200,13976,13297,128],["2026-05-05",97960,1,44800,75700,6010,5354,74],["2026-05-06",26174,0,0,0,2032,1902,22],["2026-05-07",0,0,0,0,0,0,0],["2026-05-08",0,0,0,59900,0,0,0],["2026-05-09",0,0,0,90450,0,0,0],["2026-05-18",67225,0,0,213400,5433,5133,53],["2026-05-19",129725,0,0,61900,7298,6882,109],["2026-05-20",146354,1,29900,147950,6343,6132,102],["2026-05-21",301082,12,384600,425850,7134,6350,194],["2026-05-22",299314,14,382500,400400,9226,8646,234],["2026-05-23",132514,8,207700,212200,5592,4971,163],["2026-05-24",226597,8,230700,220700,8660,8051,223],["2026-05-25",226729,17,499100,612700,10351,10043,248],["2026-05-26",74557,1,26900,51400,3993,3768,80],["2026-05-27",212736,11,318300,318300,8465,7892,250],["2026-05-28",221427,15,449000,551100,7876,7110,214],["2026-05-29",221383,11,345700,293900,7591,7151,211],["2026-05-30",212846,12,391250,590490,7462,7111,203],["2026-05-31",224997,15,516640,479490,6425,6149,225],["2026-06-01",130898,4,112100,112100,3109,2959,89],["2026-06-02",103207,4,130000,210300,2592,2490,75],["2026-06-03",98730,8,266000,291500,2822,2674,88],["2026-06-04",93695,2,63300,87200,3074,2855,87],["2026-06-05",88446,5,150500,142500,2713,2563,84],["2026-06-06",102717,3,112850,159150,2317,2167,80],["2026-06-07",103145,4,101600,101600,2551,2333,83],["2026-06-08",103629,2,116600,106100,3805,3454,121],["2026-06-09",97032,1,25900,41650,8555,7291,455],["2026-06-10",117230,7,194800,194800,7936,7238,333],["2026-06-11",149753,8,399900,399900,8626,8051,318],["2026-06-12",132511,7,194400,217400,8212,7707,238],["2026-06-13",108387,3,119640,119640,5013,4783,97],["2026-06-14",218621,7,234600,326740,11211,10606,152],["2026-06-15",136970,5,157400,157400,10215,9910,115],["2026-06-16",127257,7,239230,213330,4371,4066,103],["2026-06-17",138148,8,196900,222800,4110,3886,113],["2026-06-18",82313,6,170400,211800,2578,2457,74],["2026-06-19",111546,6,164400,164400,4367,4130,115],["2026-06-20",104048,5,138500,162750,4470,4373,101],["2026-06-21",144206,6,186300,213200,6538,6246,154],["2026-06-22",119108,4,129080,175380,4825,4424,100],["2026-06-23",127181,5,129500,227050,4623,4314,100],["2026-06-24",145543,10,345050,345050,5698,5400,122],["2026-06-25",144110,4,124600,206400,5876,5589,116],["2026-06-26",73519,4,113600,155900,3390,3268,68],["2026-06-27",148617,8,260100,260100,7326,6944,131],["2026-06-28",171663,6,253080,325280,14686,14498,203],["2026-06-29",52925,3,121000,121000,2238,2128,55],["2026-06-30",139818,5,130000,153900,6397,5942,129],["2026-07-01",114858,2,47800,94100,5072,4768,114],["2026-07-02",90761,2,59800,59800,3373,2956,80],["2026-07-03",75725,3,103100,103100,2788,2482,73],["2026-07-04",75250,4,128500,152400,2804,2410,78],["2026-07-05",79796,3,68300,84050,2915,2618,72],["2026-07-06",21127,0,0,0,760,727,16],["2026-07-20",28965,1,31400,120050,1041,960,30],["2026-07-21",110647,4,122600,122600,3382,3129,82],["2026-07-22",102635,3,97200,145500,3327,3028,72],["2026-07-23",93940,3,95700,95700,3652,3469,65],["2026-07-24",113515,4,124100,94200,4243,4005,84],["2026-07-25",251565,3,150900,150900,9516,9131,192],["2026-07-26",225114,6,216600,232350,6884,6575,171],["2026-07-27",44423,1,39800,39800,1124,1003,31]];
   var HIST_METRIC_LABEL = { spend: '지출 (원)', purchases: '메타구매 (건)', revenue: '메타매출 (원)', roas: '메타ROAS', realsales: '실매출 (원)', realroas: '실ROAS', impressions: '노출수 (회)', reach: '도달수 (명)', ctr: 'CTR (%)', cpc: 'CPC (원)', cpm: 'CPM (원)' };
-  var HIST_METRIC_COLOR = { spend: '#B8823A', purchases: '#2F8F5F', revenue: '#0089A0', roas: '#C1524A', realsales: '#2F8F5F', realroas: '#8A5CB8', impressions: '#5B7FA6', reach: '#3D6A8C', ctr: '#C9862B', cpc: '#A65B8C', cpm: '#7A5B3D' };
+  var HIST_METRIC_COLOR = { spend: '#64748B', purchases: '#16A34A', revenue: '#2563EB', roas: '#DC2626', realsales: '#0D9488', realroas: '#7C3AED', impressions: '#0EA5E9', reach: '#1D4ED8', ctr: '#EA580C', cpc: '#DB2777', cpm: '#4338CA' };
   var selectedHistMetrics = ['spend'];
   var HIST_MIN_DATE = '2026-04-22', HIST_MAX_DATE = '2026-07-27';
   var histRangeStart = HIST_MIN_DATE, histRangeEnd = HIST_MAX_DATE;
